@@ -30,7 +30,9 @@ $(function() {
 
     // 监听注册表单提交事件
     $('#form_reg').on('submit', function(e) {
+        // 阻止默认提交行为
         e.preventDefault();
+        // 把要传输的值拿出来
         var data = { username: $('#form_reg [name=username]').val(), password: $('#form_reg [name=password]').val() }
             // 发起ajax post请求
         $.post('http://api-breakingnews-web.itheima.net/api/reguser', data, function(res) {
