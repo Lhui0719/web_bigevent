@@ -15,7 +15,9 @@ $(function() {
     // 1.3 创建裁剪区域
     $image.cropper(options)
 
+    // 给上传绑定点击事件
     $('#btnChooseImage').on('click', function() {
+        // 调用input隐藏文件上传窗口
         $('#file').click()
     })
 
@@ -37,7 +39,7 @@ $(function() {
 
     })
 
-    // 为确认绑定时间
+    // 为确认绑定事件
     $('#btnUpload').on('click', function() {
         var dataURL = $image
             .cropper('getCroppedCanvas', { // 创建一个 Canvas 画布

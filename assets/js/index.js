@@ -35,11 +35,11 @@ function getUserIofo() {
         },
         // 不论成功还是失败都会调用complete回调函数
         complete: function(res) {
-            // console.log('之心了');
+            // console.log('执行了');
             // console.log(res);
             // 在complete 回调函数当中，可以使用res.responseJSON
             if (res.responseJSON.status === 1 || res.responseJSON.message === '身份认证失败！') {
-                // 强制情况本地存储
+                // 强制清空本地存储
                 localStorage.removeItem('token')
                     // 跳转到登录页
                 location.href = '/login.html'
@@ -64,6 +64,7 @@ function renderrAvatar(user) {
     } else {
         //3.2文字头像
         $('.layui-nav-img').hide()
+            // 设置name第一个属性大写
         var first = name[0].toUpperCase()
         $('.text-avatar').html(first).show
     }
